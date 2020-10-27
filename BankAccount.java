@@ -30,4 +30,12 @@ public boolean deposit(double amount) {
 	balance += amount;
 	return true;
 }
+
+public boolean withdraw(double amount) {
+	if (balance < amount || amount < 0) {
+		return false;
+	}
+	balance -= amount;
+	return true;
+}
 }
