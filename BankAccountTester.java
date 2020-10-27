@@ -3,6 +3,7 @@ public static void main(String[] args) {
 
 	BankAccount acc1 = new BankAccount(1418350, "five");
 	BankAccount acc2 = new BankAccount(-619468, "one");
+	BankAccount acc3 = new BankAccount(-1738, "deposittestbot");
 
 	System.out.println("Balance of accounts (should be zero!)");
 	System.out.println(acc1.getBalance());
@@ -36,5 +37,18 @@ public static void main(String[] args) {
 	System.out.println("\n" + "ID\tBALANCE");
 	System.out.println(acc1.toString());
 	System.out.println(acc2.toString());
+
+	System.out.println("\n" + "Deposit and Withdraw Testing");
+	for (int rounds = 0; rounds < 25; rounds++) {
+		int randint = (int)((Math.random() - 0.5) * 10000);
+		System.out.println("\n" + "Depositing " + randint + " dollars...");
+		if (acc2.deposit(randint)) System.out.println("Deposit successful! New balance is " + acc2.getBalance());
+		else System.out.println("Deposit failed!");
+
+		randint = (int)((Math.random() - 0.5) * 10000);
+		System.out.println("\n" + "Withdrawing " + randint + " dollars...");
+		if (acc2.withdraw(randint)) System.out.println("Withdrawal successful! New balance is " + acc2.getBalance());
+		else System.out.println("Withdrawal failed!");
+	}
 }
 }
