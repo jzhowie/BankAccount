@@ -38,4 +38,10 @@ public boolean withdraw(double amount) {
 	balance -= amount;
 	return true;
 }
+
+public String toString() {
+	String idbal = accountID + "\t" + balance;
+	return idbal;
+}
+
 }
