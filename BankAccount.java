@@ -22,4 +22,12 @@ public void setPassword(String newPass) {
 	System.out.println(password);
 	return;
 }
+
+public boolean deposit(double amount) {
+	if (amount < 0) {
+		return false;
+	}
+	balance += amount;
+	return true;
+}
 }
