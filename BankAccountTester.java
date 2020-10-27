@@ -8,15 +8,15 @@ public static void main(String[] args) {
 	System.out.println(acc1.getBalance());
 	System.out.println(acc2.getBalance());
 
-	System.out.println("Account IDs, refer to acc1 and acc2");
+	System.out.println("\n" + "Account IDs, refer to acc1 and acc2");
 	System.out.println(acc1.getAccountID());
 	System.out.println(acc2.getAccountID());
 
-	System.out.println("Passwords, should be equal to input");
+	System.out.println("\n" + "Passwords, should be equal to input");
 	acc1.setPassword("weliveinasociety");
 	acc2.setPassword("weliveinasociety");
 
-	System.out.println("Deposit");
+	System.out.println("\n" + "Deposit");
 	System.out.println(acc1.getBalance());
 	for (int amount = -2; amount < 3; amount += 1) {
 		System.out.println("Depositing " + amount + " dollars...");
@@ -24,7 +24,7 @@ public static void main(String[] args) {
 		else System.out.println("Deposit failed!");
 	}
 
-	System.out.println("Withdraw");
+	System.out.println("\n" + "Withdraw");
 	acc2.deposit(7);
 	System.out.println(acc2.getBalance());
 	for (int amount = -1; amount < 5; amount += 1) {
@@ -32,5 +32,9 @@ public static void main(String[] args) {
 		if (acc2.withdraw(amount)) System.out.println("Withdrawal successful! New balance is " + acc2.getBalance());
 		else System.out.println("Withdrawal failed!");
 	}
+
+	System.out.println("\n" + "ID\tBALANCE");
+	System.out.println(acc1.toString());
+	System.out.println(acc2.toString());
 }
 }
