@@ -10,5 +10,9 @@ public static void main(String[] args) {
 	System.out.println("Account IDs, refer to acc1 and acc2");
 	System.out.println(acc1.getAccountID());
 	System.out.println(acc2.getAccountID());
+
+	System.out.println("Passwords, should be equal to input");
+	acc1.setPassword("weliveinasociety");
+	acc2.setPassword("weliveinasociety");
 }
 }
