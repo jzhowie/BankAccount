@@ -14,5 +14,12 @@ public static void main(String[] args) {
 	System.out.println("Passwords, should be equal to input");
 	acc1.setPassword("weliveinasociety");
 	acc2.setPassword("weliveinasociety");
+
+	System.out.println("Deposit");
+	System.out.println(acc1.getBalance());
+	for (int amount = -10000; amount < 10000; amount += 5000) {
+		if (acc1.deposit(amount)) System.out.println("Deposit successful! New balance is " + acc1.getBalance());
+		else System.out.println("Deposit failed!");
+	}
 }
 }
