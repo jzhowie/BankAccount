@@ -16,4 +16,10 @@ public double getBalance() {
 public int getAccountID() {
 	return accountID;
 }
+
+public void setPassword(String newPass) {
+	password = newPass;
+	System.out.println(password);
+	return;
+}
 }
