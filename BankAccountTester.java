@@ -1,5 +1,6 @@
 public class BankAccountTester {
 public static void main(String[] args) {
+
 	BankAccount acc1 = new BankAccount(1418350, "five");
 	BankAccount acc2 = new BankAccount(-619468, "one");
 
@@ -17,9 +18,19 @@ public static void main(String[] args) {
 
 	System.out.println("Deposit");
 	System.out.println(acc1.getBalance());
-	for (int amount = -10000; amount < 10000; amount += 5000) {
+	for (int amount = -2; amount < 3; amount += 1) {
+		System.out.println("Depositing " + amount + " dollars...");
 		if (acc1.deposit(amount)) System.out.println("Deposit successful! New balance is " + acc1.getBalance());
 		else System.out.println("Deposit failed!");
+	}
+
+	System.out.println("Withdraw");
+	acc2.deposit(7);
+	System.out.println(acc2.getBalance());
+	for (int amount = -1; amount < 5; amount += 1) {
+		System.out.println("Withdrawing " + amount + " dollars...");
+		if (acc2.withdraw(amount)) System.out.println("Withdrawal successful! New balance is " + acc2.getBalance());
+		else System.out.println("Withdrawal failed!");
 	}
 }
 }
