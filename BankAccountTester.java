@@ -17,6 +17,13 @@ public static void main(String[] args) {
 	acc1.setPassword("weliveinasociety");
 	acc2.setPassword("weliveinasociety");
 
+	if (acc2.authenticate("weliveinasociety")) {
+		System.out.println("Logged in");
+	}
+	else {
+		System.out.println("Passwords do not match");
+	}
+
 	System.out.println("\n" + "Deposit");
 	System.out.println(acc1.getBalance());
 	for (int amount = -2; amount < 3; amount += 1) {
@@ -34,21 +41,22 @@ public static void main(String[] args) {
 		else System.out.println("Withdrawal failed!");
 	}
 
-	System.out.println("\n" + "ID\tBALANCE");
-	System.out.println(acc1.toString());
-	System.out.println(acc2.toString());
-
 	System.out.println("\n" + "Deposit and Withdraw Testing");
 	for (int rounds = 0; rounds < 25; rounds++) {
 		int randint = (int)((Math.random() - 0.5) * 10000);
 		System.out.println("\n" + "Depositing " + randint + " dollars...");
-		if (acc2.deposit(randint)) System.out.println("Deposit successful! New balance is " + acc2.getBalance());
+		if (acc3.deposit(randint)) System.out.println("Deposit successful! New balance is " + acc3.getBalance());
 		else System.out.println("Deposit failed!");
 
 		randint = (int)((Math.random() - 0.5) * 10000);
 		System.out.println("\n" + "Withdrawing " + randint + " dollars...");
-		if (acc2.withdraw(randint)) System.out.println("Withdrawal successful! New balance is " + acc2.getBalance());
+		if (acc3.withdraw(randint)) System.out.println("Withdrawal successful! New balance is " + acc3.getBalance());
 		else System.out.println("Withdrawal failed!");
 	}
+
+	System.out.println("\n" + "ID\tBALANCE");
+	System.out.println(acc1.toString());
+	System.out.println(acc2.toString());
+	System.out.println(acc3.toString());
 }
 }
