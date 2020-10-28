@@ -40,8 +40,11 @@ public boolean withdraw(double amount) {
 }
 
 public String toString() {
-	String idbal = accountID + "\t" + balance;
+	String idbal = "#" + accountID + "\t$" + balance;
 	return idbal;
 }
 
+public boolean authenticate(String password) {
+	return password == this.password;
+}
 }
