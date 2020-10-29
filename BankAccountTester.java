@@ -1,9 +1,9 @@
 public class BankAccountTester {
 public static void main(String[] args) {
 
-	BankAccount acc1 = new BankAccount(1418350, "five");
-	BankAccount acc2 = new BankAccount(-619468, "one");
-	BankAccount acc3 = new BankAccount(-1738, "deposittestbot");
+	BankAccount acc1 = new BankAccount(10000, "five");
+	BankAccount acc2 = new BankAccount(10001, "one");
+	BankAccount acc3 = new BankAccount(10002, "deposittestbot");
 
 	System.out.println("Balance of accounts (should be zero!)");
 	System.out.println(acc1.getBalance());
@@ -16,6 +16,7 @@ public static void main(String[] args) {
 	System.out.println("\n" + "Passwords, should be equal to input");
 	acc1.setPassword("weliveinasociety");
 	acc2.setPassword("weliveinasociety");
+	acc2.setPassword("testingaccount");
 
 	if (acc2.authenticate("weliveinasociety")) {
 		System.out.println("Logged in");
@@ -58,5 +59,13 @@ public static void main(String[] args) {
 	System.out.println(acc1.toString());
 	System.out.println(acc2.toString());
 	System.out.println(acc3.toString());
+
+	System.out.println("\n" + "transferTo");
+	if (acc3.transferTo(acc2, 1000, "deposittestbot")) {
+		System.out.println("Transfer successful! Your balance is " + acc3.getBalance());
+	}
+	else {
+		System.out.println("Transfer failed!");
+	}
 }
 }
