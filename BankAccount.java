@@ -49,11 +49,9 @@ public boolean authenticate(String password) {
 }
 
 public boolean transferTo(BankAccount other, double amount, String password) {
-	if (authenticate(password)) {
-		if (this.withdraw(amount)) {
-			other.deposit(amount);
-			return true;
-		}
+	if (authenticate(password) && withdraw(amount)) {
+		other.deposit(amount);
+		return true;
 	}
 	return false;
 }
